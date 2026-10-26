@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- blob: is for the app itself, which is decrypted here and run from blob: addresses. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Contractors’ and Terminal Staff Timewriting Journal</title>
+  <link rel="icon" href="assets/favicon.svg?v=332704f2010f" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=332704f2010f">
+  <script type="module" src="assets/app-host.js?v=332704f2010f"></script>
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect class="bm-bg" x="3" y="3" width="26" height="26" rx="6"/><path class="bm-line" d="M3 10.5h26M12.5 10.5v18.5"/><rect class="bm-cell" x="15.5" y="14" width="10" height="3" rx="1"/><rect class="bm-cell bm-hot" x="15.5" y="19.5" width="10" height="3" rx="1"/><rect class="bm-cell" x="6.5" y="14" width="3" height="3" rx="1"/><rect class="bm-cell" x="6.5" y="19.5" width="3" height="3" rx="1"/><rect class="bm-cell" x="15.5" y="25" width="6" height="2" rx="1"/></svg>
+      <span>Contractors’ and Terminal Staff Timewriting Journal</span>
+    </span>
+    <div id="user" class="user" hidden>
+      <span id="user-name" class="user-name"></span>
+      <button id="change-password" class="btn btn-ghost btn-sm" type="button">Change password</button>
+      <a class="btn btn-ghost btn-sm" href="index.html?signout=1">Sign out</a>
+    </div>
+  </header>
+
+  <div id="notices" class="notices" aria-live="polite"></div>
+  <div id="app"><p class="loading">Opening…</p></div>
+
+  <dialog id="pw-dialog" class="dialog" aria-labelledby="pw-title">
+    <form id="pw-form" class="dialog-body" novalidate>
+      <h2 id="pw-title">Change your password</h2>
+      <p class="muted">Choose a password only you know: at least 12 characters (a few words with spaces works well). Capitals, spaces and dashes don’t matter.</p>
+      <label class="field">
+        <span>Current password</span>
+        <span class="password-wrap">
+          <input id="current-password" type="password" autocomplete="current-password" required>
+          <button id="peek-current" class="peek-btn" type="button" aria-label="Hold to show the password" title="Hold to show the password">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle class="eye" cx="12" cy="12" r="3"/><path class="slash" d="M4 4l16 16"/></svg>
+          </button>
+        </span>
+      </label>
+      <label class="field">
+        <span>New password</span>
+        <span class="password-wrap">
+          <input id="new-password" type="password" autocomplete="new-password" required>
+          <button id="peek-new" class="peek-btn" type="button" aria-label="Hold to show the password" title="Hold to show the password">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle class="eye" cx="12" cy="12" r="3"/><path class="slash" d="M4 4l16 16"/></svg>
+          </button>
+        </span>
+      </label>
+      <label class="field">
+        <span>New password again</span>
+        <span class="password-wrap">
+          <input id="new-password-again" type="password" autocomplete="new-password" required>
+          <button id="peek-again" class="peek-btn" type="button" aria-label="Hold to show the password" title="Hold to show the password">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle class="eye" cx="12" cy="12" r="3"/><path class="slash" d="M4 4l16 16"/></svg>
+          </button>
+        </span>
+      </label>
+      <p id="pw-email" class="muted small" hidden></p>
+      <p id="pw-message" class="form-message" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button id="pw-cancel" class="btn" type="button">Cancel</button>
+        <button id="pw-submit" class="btn btn-primary" type="submit">Change password</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

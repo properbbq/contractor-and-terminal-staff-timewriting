@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Forgot your password? · Contractors’ and Terminal Staff Timewriting Journal</title>
+  <link rel="icon" href="assets/favicon.svg?v=332704f2010f" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=332704f2010f">
+  <script type="module" src="assets/forgot.js?v=332704f2010f"></script>
+</head>
+<body class="signin-page">
+  <main class="signin">
+    <div class="brand brand-lg">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect class="bm-bg" x="3" y="3" width="26" height="26" rx="6"/><path class="bm-line" d="M3 10.5h26M12.5 10.5v18.5"/><rect class="bm-cell" x="15.5" y="14" width="10" height="3" rx="1"/><rect class="bm-cell bm-hot" x="15.5" y="19.5" width="10" height="3" rx="1"/><rect class="bm-cell" x="6.5" y="14" width="3" height="3" rx="1"/><rect class="bm-cell" x="6.5" y="19.5" width="3" height="3" rx="1"/><rect class="bm-cell" x="15.5" y="25" width="6" height="2" rx="1"/></svg>
+      <span>Contractors’ and Terminal Staff Timewriting Journal</span>
+    </div>
+    <form id="forgot-form" class="card signin-card" novalidate>
+      <h1>Forgot your password?</h1>
+      <p class="muted">Enter your username and we’ll email you a link to choose a new password.</p>
+      <label class="field">
+        <span>Username</span>
+        <input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="40" required>
+      </label>
+      <p id="message" class="form-message" role="alert" hidden></p>
+      <button id="submit" class="btn btn-primary btn-block" type="submit">Email me a reset link</button>
+      <p class="signin-alt"><a href="index.html">Back to sign in</a></p>
+    </form>
+    <section id="sent" class="card signin-card" hidden aria-labelledby="sent-title">
+      <h1 id="sent-title">Check your email</h1>
+      <p>If <strong id="sent-user"></strong> has an email address for resets, a link to choose a new password is on its way.</p>
+      <ul class="plain-list muted">
+        <li>It usually arrives within a couple of minutes. Check your junk folder too.</li>
+        <li>The link works once, for an hour. Your old password keeps working until you use it.</li>
+      </ul>
+      <a class="btn btn-block" href="index.html">Back to sign in</a>
+    </section>
+    <section id="off" class="card signin-card" hidden>
+      <h1>Forgot your password?</h1>
+      <p>Resetting a password by email isn’t switched on yet.</p>
+      <a class="btn btn-block" href="index.html">Back to sign in</a>
+    </section>
+  </main>
+</body>
+</html>
